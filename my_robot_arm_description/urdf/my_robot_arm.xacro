@@ -1,29 +1,41 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot_arm">
 
-<material name="red">
-    <color rgba="1.0 0.0 0.0 1"/>
+<material name="blue">
+    <color rgba="0.0 0.0 1.0 1"/>
 </material>
+
+<material name="green">
+    <color rgba="0.0 0.5 0.0 1"/>
+</material>
+
+<material name="green_light">
+      <color rgba="0.0 1.0 0.0 1"/>
+  </material>
+
+<material name="black">
+      <color rgba="0.0 0.0 0.0 1"/>
+  </material>
 
 <!-- <xacro:include filename="$(find my_box_bot_description)/urdf/box_bot.gazebo.xacro" /> -->
 
-<xacro:property name="first_arm_length" value="0.4"/>
-<xacro:property name="second_arm_length" value="0.3"/>
-<xacro:property name="third_arm_length" value="0.1"/>
+<xacro:property name="first_arm_length" value="0.32"/>
+<xacro:property name="second_arm_length" value="0.22"/>
+<xacro:property name="third_arm_length" value="0.16"/>
 
-<xacro:property name="arm_width" value="0.075"/>
-<xacro:property name="arm_depth" value="0.075"/>
+<xacro:property name="arm_width" value="0.06"/>
+<xacro:property name="arm_depth" value="0.06"/>
 
 <xacro:property name="first_arm_mass" value="${first_arm_length*arm_width*arm_depth/7900}"/>
 <xacro:property name="second_arm_mass" value="${second_arm_length*arm_width*arm_depth/7900}"/>
 <xacro:property name="third_arm_mass" value="${third_arm_length*arm_width*arm_depth/7900}"/>
 
-<xacro:property name="revolute_joint_radius" value="0.05"/>
+<xacro:property name="revolute_joint_radius" value="0.04"/>
 <xacro:property name="revolute_joint_length" value="0.1"/>
 <xacro:property name="revolute_joint_mass" value="${(3.1415*revolute_joint_radius*revolute_joint_radius*revolute_joint_length)/7900}"/>
 
-<xacro:property name="waist_joint_radius" value="0.1"/>
-<xacro:property name="waist_joint_length" value="0.1"/>
+<xacro:property name="waist_joint_radius" value="0.125"/>
+<xacro:property name="waist_joint_length" value="0.08"/>
 <xacro:property name="waist_joint_mass" value="${(3.1415*waist_joint_radius*waist_joint_radius*waist_joint_length)/7900}"/>
 
 <xacro:property name="robot_stand_length" value="0.7"/>
@@ -33,18 +45,18 @@
 
 
 
-<xacro:macro name="rectangular_link" params="arm_name arm_length arm_width arm_depth arm_mass" >
+<xacro:macro name="rectangular_link" params="arm_name arm_length arm_width arm_depth arm_mass roll pitch yaw x y z material" >
     <link name="${arm_name}">   
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
             <geometry>
                 <box size="${arm_depth} ${arm_width} ${arm_length}"/>
             </geometry>
-            <material name="red"/>
+            <material name="${material}"/>
         </visual>
 
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
             <geometry>
                 <box size="${arm_depth} ${arm_width} ${arm_length}"/>
             </geometry>
@@ -52,7 +64,7 @@
 
         <inertial>
             <origin rpy="0 0 0" xyz="0 0 0"/>
-            <mass value="{arm_mass}"/>
+            <mass value="${arm_mass}"/>
             <inertia ixx="${(arm_mass/12)*(arm_width*arm_width + arm_length*arm_length)}" ixy="0" ixz="0" 
                      iyy="${(arm_mass/12)*(arm_depth*arm_depth + arm_length*arm_length)}" iyz="0" 
                      izz="${(arm_mass/12)*(arm_depth*arm_depth + arm_width*arm_width)}"/>
@@ -67,7 +79,7 @@
             <geometry>
                 <cylinder length="${revolute_link_length}" radius="${revolute_joint_radius}"/>
             </geometry>
-            <material name="red"/>
+            <material name="green"/>
         </visual>
 
         <collision>
@@ -94,7 +106,7 @@
             <geometry>
                 <cylinder length="${waist_link_length}" radius="${waist_link_radius}"/>
             </geometry>
-            <material name="red"/>
+            <material name="green"/>
         </visual>
 
         <collision>
@@ -114,20 +126,19 @@
     </link>
 </xacro:macro>
 
-    <link name="base_link">
-    </link>
+    
 
     <xacro:rectangular_link arm_name="robot_stand" arm_length="${robot_stand_length}" arm_depth="${robot_stand_depth}"
-                            arm_width="${robot_stand_width}" arm_mass="${robot_stand_mass}" />
+                            arm_width="${robot_stand_width}" arm_mass="${robot_stand_mass}" roll="0" pitch="0" yaw="0" x="0" y="0" z="0" material="black"/>
     
     <xacro:rectangular_link arm_name="first_arm" arm_length="${first_arm_length}" arm_depth="${arm_depth}"
-                            arm_width="${arm_width}" arm_mass="${first_arm_mass}" />
+                            arm_width="${arm_width}" arm_mass="${first_arm_mass}" roll="0" pitch="0" yaw="0" x="0" y="0" z="${first_arm_length/2}" material="blue"/>
     
     <xacro:rectangular_link arm_name="second_arm" arm_length="${second_arm_length}" arm_depth="${arm_depth}"
-                            arm_width="${arm_width}" arm_mass="${second_arm_mass}" />
+                            arm_width="${arm_width}" arm_mass="${second_arm_mass}" roll="0" pitch="0" yaw="0" x="0" y="0" z="${second_arm_length/2}" material="blue"/>
     
     <xacro:rectangular_link arm_name="third_arm" arm_length="${third_arm_length}" arm_depth="${arm_depth}"
-                            arm_width="${arm_width}" arm_mass="${third_arm_mass}" />
+                            arm_width="${arm_width}" arm_mass="${third_arm_mass}" roll="0" pitch="0" yaw="0" x="0" y="0" z="${third_arm_length/2}" material="blue"/>
 
     <xacro:waist_link_xacro waist_link_name="waist_link" waist_link_length="${waist_joint_length}" waist_link_radius="${waist_joint_radius}"
                             waist_link_mass="${waist_joint_mass}" />
@@ -141,6 +152,9 @@
     <xacro:revolute_link revolute_link_name="wrist_link" revolute_link_length="${revolute_joint_length}" revolute_link_radius="${revolute_joint_radius}"
                             revolute_link_mass="${revolute_joint_mass}" />
 
+    <link name="base_link">
+    </link>
+
     <joint name="base_link_joint" type="fixed">
         <origin rpy="0 0 0" xyz="0 0 0" />
         <parent link="base_link" />
@@ -148,7 +162,7 @@
     </joint>
     
     <joint name="waist_stand_robot_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0 0 0.35"/>
+        <origin rpy="0 0 0" xyz="0 0 ${(robot_stand_length+waist_joint_length)/2}"/>
         <child link="waist_link"/>
         <parent link="robot_stand"/>
         <axis rpy="0 0 0" xyz="0 0 1"/>
@@ -157,7 +171,7 @@
     </joint>
 
     <joint name="shoulder_waist_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0 0 0.1"/>
+        <origin rpy="0 0 0" xyz="0 0 ${revolute_joint_radius+waist_joint_length/2}"/>
         <child link="shoulder_link"/>
         <parent link="waist_link"/>
         <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -166,13 +180,13 @@
     </joint>
 
     <joint name="first_arm_shoulder_joint" type="fixed">
-        <origin rpy="0 0 0" xyz="0 0 0.05" />
+        <origin rpy="0 0 0" xyz="0 0 ${revolute_joint_radius}" />
         <parent link="shoulder_link" />
         <child link="first_arm" />
     </joint>
 
     <joint name="elbow_first_arm_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0 0 0.2"/>
+        <origin rpy="0 0 0" xyz="0 0 ${first_arm_length+revolute_joint_radius}"/>
         <child link="elbow_link"/>
         <parent link="first_arm"/>
         <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -181,13 +195,13 @@
     </joint>
 
     <joint name="second_arm_elbow_joint" type="fixed">
-        <origin rpy="0 0 0" xyz="0 0 0.05" />
+        <origin rpy="0 0 0" xyz="0 0 ${revolute_joint_radius}" />
         <parent link="elbow_link" />
         <child link="second_arm" />
     </joint>
 
     <joint name="wrist_second_arm_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0 0 0.15"/>
+        <origin rpy="0 0 0" xyz="0 0 ${second_arm_length+revolute_joint_radius}"/>
         <child link="wrist_link"/>
         <parent link="second_arm"/>
         <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -196,7 +210,7 @@
     </joint>
 
     <joint name="third_arm_wrist_joint" type="fixed">
-        <origin rpy="0 0 0" xyz="0 0 0.05" />
+        <origin rpy="0 0 0" xyz="0 0 ${revolute_joint_radius}" />
         <parent link="wrist_link" />
         <child link="third_arm" />
     </joint>
