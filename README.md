@@ -16,5 +16,21 @@ These are the final ROS projects for the courses offered by [The Construct](http
            <br><a href="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/URDF%20for%20Robot%20Modeling%20in%20ROS2">(code)</a>
       </p>
     </th>
+    <th><p>
+           <a href="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/blob/main/URDF%20for%20Robot%20Modeling%20in%20ROS2/my_robot_arm_description/images/robot_arm.png">
+           <img src="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/blob/main/URDF%20for%20Robot%20Modeling%20in%20ROS2/my_robot_arm_description/images/robot_arm.png"
+            alt="" width="250" height="140"></a>
+           <br>Robotic Arm
+           <br><a href="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/URDF%20for%20Robot%20Modeling%20in%20ROS2">(code)</a>
+      </p>
+    </th>
+    <th><p>
+           <a href="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/blob/main/URDF%20for%20Robot%20Modeling%20in%20ROS2/my_robot_arm_description/images/robot_arm.png">
+           <img src="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/blob/main/URDF%20for%20Robot%20Modeling%20in%20ROS2/my_robot_arm_description/images/robot_arm.png"
+            alt="" width="250" height="140"></a>
+           <br>Robotic Arm
+           <br><a href="https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/URDF%20for%20Robot%20Modeling%20in%20ROS2">(code)</a>
+      </p>
+    </th>
   </tr>
 </table>

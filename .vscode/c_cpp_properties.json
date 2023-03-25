@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ronaldocd/Desktop/ros2_ws/install/my_robot_interfaces/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/install/actions_quiz_msg/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/ronaldocd/Desktop/RC/ROS/navigation2_tutorials-master/nav2_gradient_costmap_plugin/include/**",
+        "/home/ronaldocd/Desktop/RC/ROS/navigation2_tutorials-master/nav2_sms_behavior/include/**",
+        "/home/ronaldocd/Desktop/RC/ROS/navigation2_tutorials-master/nav2_straightline_planner/include/**",
+        "/home/ronaldocd/Desktop/RC/Robotics software engineer/Project 2: Go chase it/ball_chaser/include/**",
+        "/home/ronaldocd/Desktop/RC/Udacity/Project2/ball_chaser/include/**",
+        "/home/ronaldocd/Desktop/RC/Udacity/src/ball_chaser/include/**",
+        "/home/ronaldocd/Desktop/RC/Wavelet/Code/actions_quiz_msg/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/actions_quiz_msg/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/box_car_bringup/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/my_box_bot_description/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/my_box_bot_gazebo/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/my_cpp_pkg/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/simple_arm/include/**",
+        "/home/ronaldocd/Desktop/ros2_ws/src/udacity_my_robot/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics C++/actions_quiz/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics C++/actions_quiz_msg/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics C++/services_quiz/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics C++/services_quiz_srv/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics C++/topics_quiz/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics Python/actions_quiz_msg/include/**",
+        "/home/ronaldocd/Desktop/the_construct/ROS2 Basics Python/services_quiz_srv/include/**",
+        "/home/ronaldocd/Desktop/the_construct/URDF for Robot Modeling in ROS2/my_robot_arm_description/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
