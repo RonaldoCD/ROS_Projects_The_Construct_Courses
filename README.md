@@ -2,9 +2,6 @@
 
 These are the final ROS projects for the courses offered by [The Construct](https://app.theconstructsim.com/Academy).
 
-## Courses Finished
-* [URDF for Robot Modeling in ROS2](https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/URDF%20for%20Robot%20Modeling%20in%20ROS2)
-
 ## Projects
 <table style="width:100%">
   <tr>
@@ -44,3 +41,9 @@ These are the final ROS projects for the courses offered by [The Construct](http
     </th>
   </tr>
 </table>
+
+## Courses Finished
+* [ROS2 Navigation](https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/ROS2%20Navigation)
+* [ROS2 Basics in C++](https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/ROS2%20Basics%20C%2B%2B)
+* [ROS2 Basics in Python](https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/ROS2%20Basics%20Python)
+* [URDF for Robot Modeling in ROS2](https://github.com/RonaldoCD/ROS_Projects_The_Construct_Courses/tree/main/URDF%20for%20Robot%20Modeling%20in%20ROS2)
